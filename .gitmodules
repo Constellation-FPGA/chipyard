@@ -25,6 +25,9 @@
 [submodule "toolchains/riscv-tools/riscv-tests"]
 	path = toolchains/riscv-tools/riscv-tests
 	url = https://github.com/Constellation-FPGA/riscv-tests.git
+[submodule "toolchains/riscv-tools/riscv-opcodes"]
+	path = toolchains/riscv-tools/riscv-opcodes
+	url = https://github.com/Constellation-FPGA/riscv-opcodes
 [submodule "generators/cva6"]
 	path = generators/cva6
 	url = https://github.com/ucb-bar/cva6-wrapper.git
