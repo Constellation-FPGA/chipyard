@@ -47,6 +47,9 @@
 [submodule "toolchains/riscv-tools/riscv-openocd"]
 	path = toolchains/riscv-tools/riscv-openocd
 	url = https://github.com/riscv/riscv-openocd.git
+[submodule "toolchains/riscv-tools/riscv-opcodes"]
+	path = toolchains/riscv-tools/riscv-opcodes
+	url = https://github.com/Constellation-FPGA/riscv-opcodes
 [submodule "toolchains/esp-tools/riscv-gnu-toolchain"]
 	path = toolchains/esp-tools/riscv-gnu-toolchain
 	url = https://github.com/ucb-bar/esp-gnu-toolchain.git
