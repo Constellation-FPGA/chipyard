@@ -13,6 +13,18 @@
 [submodule "generators/constellation"]
 	path = generators/constellation
 	url = https://github.com/ucb-bar/constellation.git
+[submodule "rocket-chip"]
+	path = generators/rocket-chip
+	url = https://github.com/Constellation-FPGA/rocket-chip.git
+[submodule "toolchains/riscv-tools/riscv-gnu-toolchain"]
+	path = toolchains/riscv-tools/riscv-gnu-toolchain
+	url = https://github.com/Constellation-FPGA/riscv-gnu-toolchain.git
+[submodule "toolchains/riscv-tools/riscv-isa-sim"]
+	path = toolchains/riscv-tools/riscv-isa-sim
+	url = https://github.com/Constellation-FPGA/riscv-isa-sim.git
+[submodule "toolchains/riscv-tools/riscv-tests"]
+	path = toolchains/riscv-tools/riscv-tests
+	url = https://github.com/Constellation-FPGA/riscv-tests.git
 [submodule "generators/cva6"]
 	path = generators/cva6
 	url = https://github.com/ucb-bar/cva6-wrapper.git
