@@ -28,13 +28,14 @@ module_prepare() ( # <submodule> [ignored-submodule..]
     echo "=>  Starting ${name} build"
     echo "==>  Initializing ${name} submodule"
     if [ $# -gt 0 ] ; then
-	(set -x; git submodule update --init "${dir}")
+	(set -x; git submodule update --init --remote "${dir}")
         while [ -n "$1" ] ; do
-	    (set -x; git -C "${dir}" config submodule."${1}".update none)
+	    (set -x; git -C "${dir}" config submodule."${1}".update checkout)
             shift
         done
     fi
-    (set -x; git submodule update --init --recursive "${dir}")
+    (set -x; git submodule update --init --remote --recursive "${dir}")
+    (set -x; git -C "${dir}" submodule foreach "git -C ${dir} submodule update --init --remote \$toplevel/\$sm_path")
 )
 
 module_run() ( # <submodule> <command..>
