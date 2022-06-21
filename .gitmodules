@@ -1,6 +1,7 @@
 [submodule "rocket-chip"]
 	path = generators/rocket-chip
 	url = https://github.com/Constellation-FPGA/rocket-chip.git
+  branch = example/mod
 [submodule "testchipip"]
 	path = generators/testchipip
 	url = https://github.com/ucb-bar/testchipip.git
