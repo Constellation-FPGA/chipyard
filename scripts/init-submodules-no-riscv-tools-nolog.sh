@@ -110,6 +110,7 @@ cd "$CHIPYARD_DIR"
     set -x
     git_submodule_exclude _skip
     git submodule update --init --recursive #--jobs 8
+    git submodule update --init --remote generators/rocket-chip
     set +x
 )
 
