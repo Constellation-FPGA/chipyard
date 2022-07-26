@@ -137,3 +137,6 @@
 [submodule "generators/fft-generator"]
 	path = generators/fft-generator
 	url = https://github.com/ucb-bar/FFTGenerator.git
+[submodule "generators/vcode-rocc"]
+	path = generators/vcode-rocc
+	url = https://github.com/Constellation-FPGA/vcode-rocc.git
