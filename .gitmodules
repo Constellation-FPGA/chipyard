@@ -163,3 +163,6 @@
 [submodule "generators/compress-acc"]
 	path = generators/compress-acc
   url = https://github.com/ucb-bar/compress-acc.git
+[submodule "generators/vcode-rocc"]
+	path = generators/vcode-rocc
+	url = https://github.com/Constellation-FPGA/vcode-rocc.git
