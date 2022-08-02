@@ -200,7 +200,8 @@ lazy val sha3 = (project in file("generators/sha3"))
   .settings(commonSettings)
 
 lazy val vcoderocc = (project in file("generators/vcode-rocc"))
-  .dependsOn(rocketchip)
+  .dependsOn(rocketchip, midasTargetUtils)
+  // midas is needed for synthesizing print statements
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(chiselTestSettings)
   .settings(commonSettings)
