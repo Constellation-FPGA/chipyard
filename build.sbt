@@ -253,7 +253,8 @@ lazy val gemmini = freshProject("gemmini", file("generators/gemmini"))
   .settings(commonSettings)
 
 lazy val vcoderocc = (project in file("generators/vcode-rocc"))
-  .dependsOn(rocketchip)
+  .dependsOn(rocketchip, midasTargetUtils)
+  // midas is needed for synthesizing print statements
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
