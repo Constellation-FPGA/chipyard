@@ -13,3 +13,12 @@ class VCodeRocketConfig extends Config(
   new freechips.rocketchip.subsystem.WithNBigCores(1) ++
   new chipyard.config.AbstractConfig)
 // DOC include end: VCodeRocket
+
+/** This class is identical to the VCodeRocketConfig class, but includes
+  * synthesizing printf calls in the VCode RoCC accelerator for debugging.
+  */
+class VCodeRocketPrintfConfig extends Config(
+  new vcoderocc.WithVCodePrintf ++
+  new vcoderocc.WithVCodeAccel ++
+  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
+  new chipyard.config.AbstractConfig)
