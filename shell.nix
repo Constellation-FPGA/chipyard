@@ -9,6 +9,7 @@ pkgs.mkShell {
 
     autoconf automake
     sbt
+    scala
 
     # ChipYard Dependencies
     coreutils moreutils binutils
