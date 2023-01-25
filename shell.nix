@@ -18,6 +18,7 @@ in pkgs.mkShell {
 
     autoconf automake
     sbt
+    scala
 
     # ChipYard Dependencies
     gnumake43
