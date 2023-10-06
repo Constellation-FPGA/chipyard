@@ -33,6 +33,9 @@ pkgs.mkShell {
     bashInteractive
   ];
 
+  # Ensure locales are present
+  LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+
   hardeningDisable = [ "all" ];
 
   shellHook = ''
