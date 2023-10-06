@@ -19,6 +19,4 @@ class VCodeRocketConfig extends Config(
   */
 class VCodeRocketPrintfConfig extends Config(
   new vcoderocc.WithVCodePrintf ++
-  new vcoderocc.WithVCodeAccel ++
-  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
-  new chipyard.config.AbstractConfig)
+  new VCodeRocketConfig)
