@@ -15,7 +15,7 @@ pkgs.mkShell {
     bison
     flex
     gmp mpfr libmpc zlib
-    vim git jdk
+    vim git jdk17
     texinfo gengetopt
     expat libusb ncurses cmake
     perl perlPackages.ExtUtilsMakeMaker
