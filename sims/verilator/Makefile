@@ -122,7 +122,8 @@ VERILATOR_OPT_FLAGS ?= \
 	--x-assign fast \
 	--x-initial fast \
 	--output-split 10000 \
-	--output-split-cfuncs 100
+	--output-split-cfuncs 100 \
+	--timing # Needed for Verilator version >5
 
 # default flags added for external IP (cva6/NVDLA)
 VERILOG_IP_VERILATOR_FLAGS := \
@@ -182,7 +183,8 @@ VERILATOR_CXXFLAGS = \
 	-DTEST_HARNESS=V$(VLOG_MODEL) \
 	-DVERILATOR \
 	-include $(build_dir)/$(long_name).plusArgs \
-	-include $(build_dir)/verilator.h
+	-include $(build_dir)/verilator.h \
+	-std=c++2a # Needed for GCC > 11.3.0
 
 VERILATOR_LDFLAGS = $(SIM_LDFLAGS)
 
