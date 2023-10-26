@@ -122,7 +122,8 @@ VERILATOR_OPT_FLAGS ?= \
 	--x-assign fast \
 	--x-initial fast \
 	--output-split 10000 \
-	--output-split-cfuncs 100
+	--output-split-cfuncs 100 \
+	--timing # Needed for Verilator version >5
 
 # default flags added for external IP (cva6/NVDLA)
 VERILOG_IP_VERILATOR_FLAGS := \
