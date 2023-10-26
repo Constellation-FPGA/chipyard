@@ -183,7 +183,8 @@ VERILATOR_CXXFLAGS = \
 	-DTEST_HARNESS=V$(VLOG_MODEL) \
 	-DVERILATOR \
 	-include $(build_dir)/$(long_name).plusArgs \
-	-include $(build_dir)/verilator.h
+	-include $(build_dir)/verilator.h \
+	-std=c++2a # Needed for GCC > 11.3.0
 
 VERILATOR_LDFLAGS = $(SIM_LDFLAGS)
 
