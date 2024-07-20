@@ -28,6 +28,13 @@
         # What we really want
         devShells = forAllSystems (system:
           let pkgs = nixpkgsFor.${system};
+              gnumake43 = pkgs.gnumake.overrideAttrs (final: prev: rec {
+                version = "4.3";
+                src = pkgs.fetchurl {
+                  url = "mirror://gnu/make/make-${version}.tar.gz";
+                  sha256 = "sha256-4F/d5HxffKRctpfpc4lP9PXXnhO3UO1X17Ztje/Hjhk=";
+                };
+              });
           in {
             default = pkgs.mkShell {
               buildInputs = with pkgs; [
@@ -39,6 +46,7 @@
                 scala
 
                 # ChipYard Dependencies
+                gnumake43
                 coreutils moreutils binutils
                 bison
                 flex
