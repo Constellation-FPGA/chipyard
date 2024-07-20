@@ -2,7 +2,16 @@
 
 with pkgs.lib;
 
-pkgs.mkShell {
+let
+  gnumake43 = pkgs.gnumake.overrideAttrs (final: prev: rec {
+    version = "4.3";
+    src = pkgs.fetchurl {
+      url = "mirror://gnu/make/make-${version}.tar.gz";
+      sha256 = "sha256-4F/d5HxffKRctpfpc4lP9PXXnhO3UO1X17Ztje/Hjhk=";
+    };
+  });
+
+in pkgs.mkShell {
   buildInputs = with pkgs; [
     svls      # SystemVerilog Language Server
     verilator # (System)Verilog Simulator/Compiler
@@ -11,6 +20,7 @@ pkgs.mkShell {
     sbt
 
     # ChipYard Dependencies
+    gnumake43
     coreutils moreutils binutils
     bison
     flex
