@@ -71,6 +71,10 @@
                 # Install dtc
                 dtc
 
+                # CIRCT stuff
+                jq
+                cmake ninja
+
                 # keep this line if you use bash
                 bashInteractive
               ];
