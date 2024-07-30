@@ -35,25 +35,31 @@
                   sha256 = "sha256-4F/d5HxffKRctpfpc4lP9PXXnhO3UO1X17Ztje/Hjhk=";
                 };
               });
-          in {
-            default = pkgs.mkShell {
-              buildInputs = with pkgs; [
-                svls      # SystemVerilog Language Server
-                verilator # (System)Verilog Simulator/Compiler
 
-                autoconf automake
-                sbt
-                scala
-
+              riscvNativeBuildInputs = with pkgs; [
                 # ChipYard Dependencies
                 gnumake43
                 coreutils moreutils binutils
+                flock
                 bison
                 flex
+                autoconf automake
                 gmp mpfr libmpc zlib
                 vim git jdk17
                 texinfo gengetopt
                 expat libusb ncurses cmake
+              ];
+
+          in {
+            default = pkgs.mkShell {
+              nativeBuildInputs = riscvNativeBuildInputs;
+              buildInputs = with pkgs; [
+                svls      # SystemVerilog Language Server
+                verilator # (System)Verilog Simulator/Compiler
+
+                sbt
+                scala
+
                 perl perlPackages.ExtUtilsMakeMaker
                 # Deps for poky
                 python3 patch diffstat texinfo subversion chrpath git wget
@@ -75,7 +81,9 @@
               hardeningDisable = [ "all" ];
 
               shellHook = ''
+                # Unset $OBJCOPY for compiling glibc-based RISC-V toolchain
                 unset OBJCOPY
+                unset OBJDUMP
               '';
             };
           });
