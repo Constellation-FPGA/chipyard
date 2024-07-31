@@ -1,7 +1,6 @@
 package chipyard
 
-import freechips.rocketchip.config.{Config}
-import freechips.rocketchip.diplomacy.{AsynchronousCrossing}
+import org.chipsalliance.cde.config.{Config}
 
 // --------------
 // Rocket+VCode Configs
@@ -10,14 +9,14 @@ import freechips.rocketchip.diplomacy.{AsynchronousCrossing}
 // DOC include start: VCodeRocket
 class VCodeRocketConfig extends Config(
   new vcoderocc.WithVCodeAccel ++
-  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
+  new freechips.rocketchip.rocket.WithNBigCores(1) ++
   new chipyard.config.AbstractConfig)
 // DOC include end: VCodeRocket
 
 // DOC include start: BigVCodeRocket
 class BigVCodeRocketConfig extends Config(
   new vcoderocc.WithVCodeAccel(8) ++
-  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
+  new freechips.rocketchip.rocket.WithNBigCores(1) ++
   new chipyard.config.AbstractConfig)
 // DOC include end: BigVCodeRocket
 
