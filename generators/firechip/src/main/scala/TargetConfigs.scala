@@ -247,6 +247,15 @@ class FireSimQuadRocketConfig extends Config(
   new WithFireSimConfigTweaks ++
   new chipyard.QuadRocketConfig)
 
+/* Small BOOM configuration good for testing FPEs and PPEs. */
+class FireSimSmallBoom4GiBDRAMConfig extends Config(
+  // new chipyard.config.WithSV39() ++
+  new freechips.rocketchip.subsystem.WithExtMemSize((1 << 30) * 4L) ++
+  new WithDefaultFireSimBridges ++
+  new WithDefaultMemModel ++
+  new WithFireSimConfigTweaks ++
+  new chipyard.SmallBoomV3Config)
+
 // A stripped down configuration that should fit on all supported hosts.
 // Flat to avoid having to reorganize the config class hierarchy to remove certain features
 class FireSimSmallSystemConfig extends Config(
